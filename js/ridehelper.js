@@ -5,6 +5,14 @@ window.rideHelper = {
     save: (key, value) => {
         try { localStorage.setItem(key, value); } catch { }
     },
+    watchStorage: (ref, key) => {
+        window.addEventListener('storage', e => {
+            if (e.key === key) ref.invokeMethodAsync('Reload');
+        });
+    },
+    setAccent: name => {
+        document.documentElement.setAttribute('data-accent', name);
+    },
     setTextLevel: level => {
         document.documentElement.dataset.text = String(level);
     },
