@@ -1,0 +1,111 @@
+/* Layout and the few custom bits on top of Bit BlazorUI. Colors come from Bit's theme variables,
+   so light, dark and system themes work without extra rules. */
+
+html, body {
+    margin: 0;
+    background: var(--bit-clr-bg-pri);
+    color: var(--bit-clr-fg-pri);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* Text size setting (Info page). Zoom scales Bit's controls along with the text. */
+html { --text-zoom: 1; }
+html[data-text="1"] { --text-zoom: 1.2; }
+html[data-text="2"] { --text-zoom: 1.4; }
+
+h1 { font-size: 1.6rem; margin: 0.5rem 0 0.75rem; }
+h2 { font-size: 1.2rem; margin: 0 0 0.5rem; }
+a { color: var(--bit-clr-pri); }
+
+.shell {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background: var(--bit-clr-pri);
+    color: var(--bit-clr-pri-text);
+    padding: calc(0.6rem + env(safe-area-inset-top)) 1rem 0.6rem;
+    font-weight: 700;
+}
+
+.content {
+    flex: 1;
+    zoom: var(--text-zoom);
+    width: calc(100% / var(--text-zoom));
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem 7rem;
+    box-sizing: border-box;
+}
+
+.tabbar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--bit-clr-bg-sec);
+    border-top: 2px solid var(--bit-clr-brd-pri);
+    z-index: 10;
+}
+
+.card {
+    display: block;
+    background: var(--bit-clr-bg-sec);
+    border: 1px solid var(--bit-clr-brd-pri);
+    border-radius: 14px;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    color: var(--bit-clr-fg-pri);
+    text-decoration: none;
+}
+
+.card.late { border-color: var(--bit-clr-err); }
+.card .bit-btn { margin-top: 0.5rem; }
+
+.row { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.big { font-size: 1.25rem; }
+.when { font-size: 1.3rem; font-weight: 700; margin: 0.25rem 0; }
+.muted { color: var(--bit-clr-fg-sec); }
+.small { font-size: 0.8rem; }
+
+.pill {
+    display: inline-block;
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 2px solid var(--bit-clr-brd-pri);
+    white-space: nowrap;
+}
+.pill.booked { border-color: var(--bit-clr-suc); color: var(--bit-clr-suc); }
+.pill.cancelled { border-color: var(--bit-clr-fg-sec); color: var(--bit-clr-fg-sec); }
+.pill.planned { border-color: var(--bit-clr-err); color: var(--bit-clr-err); }
+
+/* Spacing between stacked Bit controls */
+.form > *, .content > .bit-btn, .content > .bit-msg { margin-top: 0.9rem; }
+.actions { display: grid; gap: 0.5rem; }
+
+.script dl { margin: 0; }
+.script dt { color: var(--bit-clr-fg-sec); font-size: 0.85rem; margin-top: 0.6rem; font-weight: 700; text-transform: uppercase; }
+.script dd { margin: 0; font-size: 1.3rem; font-weight: 600; }
+
+.loading { text-align: center; padding: 3rem 1rem; color: var(--bit-clr-fg-sec); }
+
+:focus-visible { outline: 4px solid #f5a623; outline-offset: 2px; }
+
+#blazor-error-ui {
+    background: var(--bit-clr-wrn);
+    color: #000;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+#blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: 0.75rem; top: 0.5rem; }

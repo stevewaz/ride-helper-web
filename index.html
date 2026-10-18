@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" bit-theme-system bit-theme-persist>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b3d6b" />
+    <title>Ride Helper</title>
+    <base href="/ride-helper-web/" />
+    <link href="_framework/dotnet.1a4a4vpzns.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-1xs2JJlc0gDFtfi62LBTuEmi8sRlWI7+lt3wGXyU4dw=" />
+    <link href="_content/Bit.BlazorUI/styles/bit.blazorui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="RideHelper.styles.css" rel="stylesheet" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.w3qd1tpl0e.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.1a4a4vpzns.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.q38003gvqi.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.azrfhwb804.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/blazor.webassembly.w3qd1tpl0e.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/dotnet.1a4a4vpzns.js": "sha256-1xs2JJlc0gDFtfi62LBTuEmi8sRlWI7+lt3wGXyU4dw=",
+    "./_framework/dotnet.js": "sha256-1xs2JJlc0gDFtfi62LBTuEmi8sRlWI7+lt3wGXyU4dw=",
+    "./_framework/dotnet.native.js": "sha256-BtUMevCTTpUK4I5d68LtBZlJdGIQC7fk+oNnjyzuFR4=",
+    "./_framework/dotnet.native.q38003gvqi.js": "sha256-BtUMevCTTpUK4I5d68LtBZlJdGIQC7fk+oNnjyzuFR4=",
+    "./_framework/dotnet.runtime.azrfhwb804.js": "sha256-muN076HgyOCoAaid7zD7a2/GN7aQ7tmK/BzdnKgw78g=",
+    "./_framework/dotnet.runtime.js": "sha256-muN076HgyOCoAaid7zD7a2/GN7aQ7tmK/BzdnKgw78g="
+  }
+}</script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="loading">Loading Ride Helper…</div>
+    </div>
+
+    <div id="blazor-error-ui">
+        Something went wrong.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">✕</span>
+    </div>
+    <script src="js/ridehelper.js"></script>
+    <script src="_content/Bit.BlazorUI/scripts/bit.blazorui.js"></script>
+    <script src="_framework/blazor.webassembly.w3qd1tpl0e.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
+</body>
+
+</html>
